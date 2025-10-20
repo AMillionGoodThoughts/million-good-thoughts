@@ -900,4 +900,4 @@ export default function MillionGoodThoughts() {
     </div>
   );
 }
-Add 200 uplifting quotes
+Add 200 uplifing quotes
