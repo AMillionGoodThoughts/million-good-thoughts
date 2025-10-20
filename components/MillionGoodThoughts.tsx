@@ -32,7 +32,6 @@ const Chip = ({ children }: { children: React.ReactNode }) => (
 
 // Seed quotes: verify rights before production
 const SEED_QUOTES = [
-  {
   text: "Keep your face always toward the sunshine—and shadows will fall behind you.",
   author: "Walt Whitman",
   source: "Leaves of Grass",
@@ -680,6 +679,7 @@ const SEED_QUOTES = [
   publicDomainLikely: true,
   isAff
 
+
 ];
 
 const AFFIRMATIONS = [
@@ -900,3 +900,4 @@ export default function MillionGoodThoughts() {
     </div>
   );
 }
+Add 200 uplifting quotes
