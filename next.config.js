@@ -5,4 +5,30 @@ const nextConfig = {
     typedRoutes: true
   }
 };
-export default nextConfig;
+module.exports = nextConfig;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fix Next.js config file for Vercel build
