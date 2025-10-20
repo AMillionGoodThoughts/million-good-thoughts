@@ -33,75 +33,653 @@ const Chip = ({ children }: { children: React.ReactNode }) => (
 // Seed quotes: verify rights before production
 const SEED_QUOTES = [
   {
-    text: "The best way to cheer yourself is to try to cheer someone else up.",
-    author: "Mark Twain",
-    source: "(attrib.)",
-    moods: ["sad", "down", "lonely"],
-    publicDomainLikely: true,
-  },
-  {
-    text: "In the middle of winter, I found there was, within me, an invincible summer.",
-    author: "Albert Camus",
-    source: "Return to Tipasa",
-    moods: ["hopeless", "down", "anxious"],
-    publicDomainLikely: false,
-  },
-  {
-    text: "The sun himself is weak when he first rises, and gathers strength and courage as the day gets on.",
-    author: "Charles Dickens",
-    source: "The Old Curiosity Shop",
-    moods: ["unmotivated", "sad", "down"],
-    publicDomainLikely: true,
-  },
-  {
-    text: "What we do now echoes in eternity.",
-    author: "Marcus Aurelius",
-    source: "Meditations",
-    moods: ["grieving", "lost", "down"],
-    publicDomainLikely: true,
-  },
-  {
-    text: "Do not let your fire go out, spark by irreplaceable spark.",
-    author: "Ayn Rand",
-    source: "Atlas Shrugged",
-    moods: ["hopeless", "unmotivated"],
-    publicDomainLikely: false,
-  },
-  {
-    text: "The only person you are destined to become is the person you decide to be.",
-    author: "Ralph Waldo Emerson",
-    source: "(attrib.)",
-    moods: ["unmotivated", "anxious"],
-    publicDomainLikely: true,
-  },
-  {
-    text: "We must let go of the life we have planned, so as to accept the one that is waiting for us.",
-    author: "Joseph Campbell",
-    source: "(attrib.)",
-    moods: ["grieving", "sad"],
-    publicDomainLikely: false,
-  },
-  {
-    text: "He who has a why to live can bear almost any how.",
-    author: "Friedrich Nietzsche",
-    source: "Twilight of the Idols",
-    moods: ["hopeless", "grieving"],
-    publicDomainLikely: true,
-  },
-  {
-    text: "There is no charm equal to tenderness of heart.",
-    author: "Jane Austen",
-    source: "Emma",
-    moods: ["lonely", "sad"],
-    publicDomainLikely: true,
-  },
-  {
-    text: "Courage is grace under pressure.",
-    author: "Ernest Hemingway",
-    source: "(attrib.)",
-    moods: ["anxious", "stressed"],
-    publicDomainLikely: false,
-  },
+  text: "Keep your face always toward the sunshine—and shadows will fall behind you.",
+  author: "Walt Whitman",
+  source: "Leaves of Grass",
+  moods: ["sad","down","hopeless"],
+  publicDomainLikely: true
+},
+{
+  text: "We must be willing to let go of the life we planned so as to have the life that is waiting for us.",
+  author: "Joseph Campbell",
+  source: "(attrib.)",
+  moods: ["grieving","sad"],
+  publicDomainLikely: false
+},
+{
+  text: "The best way to cheer yourself is to try to cheer someone else up.",
+  author: "Mark Twain",
+  source: "(attrib.)",
+  moods: ["sad","lonely","down"],
+  publicDomainLikely: true
+},
+{
+  text: "The only person you are destined to become is the person you decide to be.",
+  author: "Ralph Waldo Emerson",
+  source: "(attrib.)",
+  moods: ["unmotivated","anxious"],
+  publicDomainLikely: true
+},
+{
+  text: "When you arise in the morning think of what a precious privilege it is to be alive—to breathe, to think, to enjoy, to love.",
+  author: "Marcus Aurelius",
+  source: "Meditations",
+  moods: ["down","hopeless","anxious"],
+  publicDomainLikely: true
+},
+{
+  text: "What we do now echoes in eternity.",
+  author: "Marcus Aurelius",
+  source: "Meditations",
+  moods: ["grieving","lost","down"],
+  publicDomainLikely: true
+},
+{
+  text: "In the depth of winter I finally learned that within me there lay an invincible summer.",
+  author: "Albert Camus",
+  source: "Return to Tipasa",
+  moods: ["hopeless","down","anxious"],
+  publicDomainLikely: false
+},
+{
+  text: "Do not let your fire go out, spark by irreplaceable spark in the hopeless swamps of the not-quite, the not-yet, and the not-when.",
+  author: "Ayn Rand",
+  source: "Atlas Shrugged",
+  moods: ["hopeless","unmotivated"],
+  publicDomainLikely: false
+},
+{
+  text: "There is no charm equal to tenderness of heart.",
+  author: "Jane Austen",
+  source: "Emma",
+  moods: ["lonely","sad"],
+  publicDomainLikely: true
+},
+{
+  text: "Courage is grace under pressure.",
+  author: "Ernest Hemingway",
+  source: "(attrib.)",
+  moods: ["anxious","stressed"],
+  publicDomainLikely: false
+},
+{
+  text: "Every good moment we share is a victory over the days that felt like they’d never end.",
+  author: "",
+  source: "",
+  moods: ["sad","lonely","hopeless"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "One breath in, one breath out. Calm returns in the silence of just breathing.",
+  author: "",
+  source: "",
+  moods: ["anxious","stressed"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "Your worth is not measured by today’s energy levels.",
+  author: "",
+  source: "",
+  moods: ["unmotivated","down"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "Sometimes the smallest step in the right direction ends up being the biggest step of your life.",
+  author: "",
+  source: "",
+  moods: ["hopeless","unmotivated"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "Healing doesn’t mean the damage never existed. It means the damage no longer controls our lives.",
+  author: "",
+  source: "",
+  moods: ["grieving","sad","down"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "Not all strong people wear their toughness on the outside—sometimes the strongest are the ones who smile when they feel like crying.",
+  author: "",
+  source: "",
+  moods: ["lonely","down","hopeless"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "You are capable of amazing things—even when you don’t feel capable. Trust tomorrow’s energy to become today’s change.",
+  author: "",
+  source: "",
+  moods: ["unmotivated","anxious"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "Begin where you are. Use what you have. Do what you can.",
+  author: "Arthur Ashe",
+  source: "(attrib.)",
+  moods: ["unmotivated","down"],
+  publicDomainLikely: false
+},
+{
+  text: "Success is peace of mind which is knowing you made the effort to become the best of which you are capable.",
+  author: "John Wooden",
+  source: "(attrib.)",
+  moods: ["unmotivated","anxious"],
+  publicDomainLikely: false
+},
+{
+  text: "To live is the rarest thing in the world. Most people exist, that is all.",
+  author: "Oscar Wilde",
+  source: "(attrib.)",
+  moods: ["down","sad"],
+  publicDomainLikely: true
+},
+{
+  text: "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+  author: "Ralph Waldo Emerson",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: true
+},
+{
+  text: "The only way out is always through.",
+  author: "Robert Frost",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: true
+},
+{
+  text: "The secret of getting ahead is getting started.",
+  author: "Mark Twain",
+  source: "(attrib.)",
+  moods: ["unmotivated","down"],
+  publicDomainLikely: true
+},
+{
+  text: "Life is what happens when you’re busy making other plans.",
+  author: "John Lennon",
+  source: "(attrib.)",
+  moods: ["down","anxious"],
+  publicDomainLikely: false
+},
+{
+  text: "Don’t judge each day by the harvest you reap but by the seeds that you plant.",
+  author: "Robert Louis Stevenson",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: true
+},
+{
+  text: "No legacy is so rich as honesty.",
+  author: "William Shakespeare",
+  source: "(attrib.)",
+  moods: ["unmotivated","down"],
+  publicDomainLikely: true
+},
+{
+  text: "Believe you can and you’re halfway there.",
+  author: "Theodore Roosevelt",
+  source: "(attrib.)",
+  moods: ["unmotivated","anxious"],
+  publicDomainLikely: true
+},
+{
+  text: "It does not matter how slowly you go as long as you do not stop.",
+  author: "Confucius",
+  source: "(attrib.)",
+  moods: ["unmotivated","down"],
+  publicDomainLikely: true
+},
+{
+  text: "We are what we repeatedly do. Excellence, then, is not an act but a habit.",
+  author: "Aristotle",
+  source: "(attrib.)",
+  moods: ["unmotivated","down"],
+  publicDomainLikely: true
+},
+{
+  text: "If you change the way you look at things, the things you look at change.",
+  author: "Wayne Dyer",
+  source: "(attrib.)",
+  moods: ["hopeless","anxious"],
+  publicDomainLikely: false
+},
+{
+  text: "What you do makes a difference, and you have to decide what kind of difference you want to make.",
+  author: "Jane Goodall",
+  source: "(attrib.)",
+  moods: ["hopeless","unmotivated"],
+  publicDomainLikely: false
+},
+{
+  text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+  author: "Nelson Mandela",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: false
+},
+{
+  text: "When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened.",
+  author: "Helen Keller",
+  source: "(attrib.)",
+  moods: ["hopeless","sad"],
+  publicDomainLikely: false
+},
+{
+  text: "Happiness is the only good. The time to be happy is now, the place to be happy is here.",
+  author: "Robert G. Ingersoll",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: true
+},
+{
+  text: "Even the darkest night will end and the sun will rise.",
+  author: "Victor Hugo",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: true
+},
+{
+  text: "To love another person is to see the face of God.",
+  author: "Victor Hugo",
+  source: "Les Misérables",
+  moods: ["sad","lonely"],
+  publicDomainLikely: true
+},
+{
+  text: "There is no substitute for hard work.",
+  author: "Thomas Edison",
+  source: "(attrib.)",
+  moods: ["unmotivated","down"],
+  publicDomainLikely: false
+},
+{
+  text: "It always seems impossible until it’s done.",
+  author: "Nelson Mandela",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: false
+},
+{
+  text: "Somewhere in your future someone is grateful you didn’t give up today.",
+  author: "",
+  source: "",
+  moods: ["hopeless","grieving"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "Breathing in: calm. Breathing out: release. One breath is a beginning.",
+  author: "",
+  source: "",
+  moods: ["anxious","stressed"],
+  publicDomainLikely: true,
+  isAffirmation: true
+}
+{
+  text: "There is nothing either good or bad, but thinking makes it so.",
+  author: "William Shakespeare",
+  source: "Hamlet",
+  moods: ["anxious","hopeless","down"],
+  publicDomainLikely: true
+},
+{
+  text: "Though nobody can go back and make a new beginning, anyone can start now and make a new ending.",
+  author: "George Eliot",
+  source: "(attrib.)",
+  moods: ["hopeless","unmotivated"],
+  publicDomainLikely: true
+},
+{
+  text: "The best and most beautiful things in the world cannot be seen or even touched—they must be felt with the heart.",
+  author: "Helen Keller",
+  source: "(attrib.)",
+  moods: ["grieving","lonely"],
+  publicDomainLikely: false
+},
+{
+  text: "When you have eliminated the impossible, whatever remains, however improbable, must be the truth.",
+  author: "Arthur Conan Doyle",
+  source: "Sherlock Holmes",
+  moods: ["anxious","stressed"],
+  publicDomainLikely: true
+},
+{
+  text: "He who has health has hope; and he who has hope has everything.",
+  author: "Thomas Carlyle",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: true
+},
+{
+  text: "Happiness depends upon ourselves.",
+  author: "Aristotle",
+  source: "(attrib.)",
+  moods: ["sad","down"],
+  publicDomainLikely: true
+},
+{
+  text: "You are never too old to set another goal or to dream a new dream.",
+  author: "C. S. Lewis",
+  source: "(attrib.)",
+  moods: ["hopeless","unmotivated"],
+  publicDomainLikely: false
+},
+{
+  text: "Act as if what you do makes a difference. It does.",
+  author: "William James",
+  source: "(attrib.)",
+  moods: ["hopeless","unmotivated"],
+  publicDomainLikely: true
+},
+{
+  text: "Happiness is not something ready made. It comes from your own actions.",
+  author: "Dalai Lama",
+  source: "(attrib.)",
+  moods: ["down","unmotivated"],
+  publicDomainLikely: false
+},
+{
+  text: "It is never too late to be what you might have been.",
+  author: "George Eliot",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: true
+},
+{
+  text: "Do what you can, with what you have, where you are.",
+  author: "Theodore Roosevelt",
+  source: "(attrib.)",
+  moods: ["unmotivated","down"],
+  publicDomainLikely: true
+},
+{
+  text: "There is nothing in the world so irresistibly contagious as laughter and good humor.",
+  author: "Charles Dickens",
+  source: "A Christmas Carol",
+  moods: ["sad","down"],
+  publicDomainLikely: true
+},
+{
+  text: "Kind words can be short and easy to speak, but their echoes are truly endless.",
+  author: "Mother Teresa",
+  source: "(attrib.)",
+  moods: ["sad","lonely"],
+  publicDomainLikely: false
+},
+{
+  text: "Faith is taking the first step even when you don't see the whole staircase.",
+  author: "Martin Luther King Jr.",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: false
+},
+{
+  text: "Our greatest glory is not in never falling, but in rising every time we fall.",
+  author: "Confucius",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: true
+},
+{
+  text: "If you light a lamp for someone, it will also brighten your path.",
+  author: "Buddha",
+  source: "(attrib.)",
+  moods: ["sad","lonely"],
+  publicDomainLikely: true
+},
+{
+  text: "All the darkness in the world cannot extinguish the light of a single candle.",
+  author: "Francis of Assisi",
+  source: "(attrib.)",
+  moods: ["hopeless","sad"],
+  publicDomainLikely: true
+},
+{
+  text: "If we have no peace, it is because we have forgotten that we belong to each other.",
+  author: "Mother Teresa",
+  source: "(attrib.)",
+  moods: ["sad","grieving"],
+  publicDomainLikely: false
+},
+{
+  text: "Peace begins with a smile.",
+  author: "Mother Teresa",
+  source: "(attrib.)",
+  moods: ["stressed","anxious"],
+  publicDomainLikely: false
+},
+{
+  text: "Every moment is a fresh beginning.",
+  author: "T. S. Eliot",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: true
+},
+{
+  text: "There are far better things ahead than any we leave behind.",
+  author: "C. S. Lewis",
+  source: "(attrib.)",
+  moods: ["hopeless","grieving"],
+  publicDomainLikely: false
+},
+{
+  text: "You yourself, as much as anybody in the entire universe, deserve your love and affection.",
+  author: "Buddha",
+  source: "(attrib.)",
+  moods: ["sad","lonely"],
+  publicDomainLikely: true
+},
+{
+  text: "Be kind whenever possible. It is always possible.",
+  author: "Dalai Lama",
+  source: "(attrib.)",
+  moods: ["sad","down"],
+  publicDomainLikely: false
+},
+{
+  text: "With the new day comes new strength and new thoughts.",
+  author: "Eleanor Roosevelt",
+  source: "(attrib.)",
+  moods: ["unmotivated","down"],
+  publicDomainLikely: false
+},
+{
+  text: "It is during our darkest moments that we must focus to see the light.",
+  author: "Aristotle",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: true
+},
+{
+  text: "The soul becomes dyed with the color of its thoughts.",
+  author: "Marcus Aurelius",
+  source: "Meditations",
+  moods: ["down","unmotivated"],
+  publicDomainLikely: true
+},
+{
+  text: "Be not afraid of life. Believe that life is worth living, and your belief will help create the fact.",
+  author: "William James",
+  source: "(attrib.)",
+  moods: ["hopeless","down"],
+  publicDomainLikely: true
+},
+{
+  text: "No one can make you feel inferior without your consent.",
+  author: "Eleanor Roosevelt",
+  source: "(attrib.)",
+  moods: ["anxious","down"],
+  publicDomainLikely: false
+},
+{
+  text: "You gain strength, courage, and confidence by every experience in which you really stop to look fear in the face.",
+  author: "Eleanor Roosevelt",
+  source: "(attrib.)",
+  moods: ["anxious","stressed"],
+  publicDomainLikely: false
+},
+{
+  text: "Everything you’ve ever wanted is on the other side of fear.",
+  author: "George Addair",
+  source: "(attrib.)",
+  moods: ["anxious","unmotivated"],
+  publicDomainLikely: false
+},
+{
+  text: "If you want to lift yourself up, lift up someone else.",
+  author: "Booker T. Washington",
+  source: "(attrib.)",
+  moods: ["sad","hopeless"],
+  publicDomainLikely: true
+},
+{
+  text: "Keep love in your heart. A life without it is like a sunless garden when the flowers are dead.",
+  author: "Oscar Wilde",
+  source: "(attrib.)",
+  moods: ["sad","lonely"],
+  publicDomainLikely: true
+},
+{
+  text: "A gentle word, a kind look, a good-natured smile can work wonders and accomplish miracles.",
+  author: "William Hazlitt",
+  source: "(attrib.)",
+  moods: ["sad","lonely"],
+  publicDomainLikely: true
+},
+{
+  text: "A day without laughter is a day wasted.",
+  author: "Charlie Chaplin",
+  source: "(attrib.)",
+  moods: ["down","sad"],
+  publicDomainLikely: true
+},
+{
+  text: "Everything has beauty, but not everyone sees it.",
+  author: "Confucius",
+  source: "(attrib.)",
+  moods: ["down","unmotivated"],
+  publicDomainLikely: true
+},
+{
+  text: "Be faithful in small things because it is in them that your strength lies.",
+  author: "Mother Teresa",
+  source: "(attrib.)",
+  moods: ["unmotivated","down"],
+  publicDomainLikely: false
+},
+{
+  text: "When you reach the end of your rope, tie a knot in it and hang on.",
+  author: "Franklin D. Roosevelt",
+  source: "(attrib.)",
+  moods: ["hopeless","grieving"],
+  publicDomainLikely: false
+},
+{
+  text: "In the middle of every difficulty lies opportunity.",
+  author: "Albert Einstein",
+  source: "(attrib.)",
+  moods: ["hopeless","stressed"],
+  publicDomainLikely: false
+},
+{
+  text: "Each day provides its own gifts.",
+  author: "Marcus Aurelius",
+  source: "Meditations",
+  moods: ["sad","down"],
+  publicDomainLikely: true
+},
+{
+  text: "The greater part of our happiness or misery depends on our dispositions and not on our circumstances.",
+  author: "Martha Washington",
+  source: "(attrib.)",
+  moods: ["sad","hopeless"],
+  publicDomainLikely: true
+},
+{
+  text: "Happiness is not having what you want. It is wanting what you have.",
+  author: "Rabbi Hyman Schachtel",
+  source: "(attrib.)",
+  moods: ["sad","down"],
+  publicDomainLikely: false
+},
+{
+  text: "Gratitude turns what we have into enough.",
+  author: "",
+  source: "",
+  moods: ["sad","unmotivated"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "Even stars need darkness to shine.",
+  author: "",
+  source: "",
+  moods: ["hopeless","sad"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "Your story isn’t over; it’s just turning a page.",
+  author: "",
+  source: "",
+  moods: ["hopeless","grieving"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "Peace is not the absence of trouble, but the presence of calm.",
+  author: "",
+  source: "",
+  moods: ["anxious","stressed"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "One kind act can start a chain reaction of good things you may never see.",
+  author: "",
+  source: "",
+  moods: ["sad","down"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "You are doing better than you think you are.",
+  author: "",
+  source: "",
+  moods: ["unmotivated","anxious"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "Every sunrise is a reminder that light always returns.",
+  author: "",
+  source: "",
+  moods: ["hopeless","sad"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "Small steps every day still move you forward.",
+  author: "",
+  source: "",
+  moods: ["unmotivated","down"],
+  publicDomainLikely: true,
+  isAffirmation: true
+},
+{
+  text: "You are stronger than the storm that tried to break you.",
+  author: "",
+  source: "",
+  moods: ["hopeless","grieving"],
+  publicDomainLikely: true,
+  isAff
+
 ];
 
 const AFFIRMATIONS = [
