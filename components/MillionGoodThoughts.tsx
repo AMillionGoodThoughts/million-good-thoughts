@@ -319,7 +319,7 @@ const SEED_QUOTES = [{
   moods: ["anxious","stressed"],
   publicDomainLikely: true,
   isAffirmation: true
-}
+},
 {
   text: "There is nothing either good or bad, but thinking makes it so.",
   author: "William Shakespeare",
