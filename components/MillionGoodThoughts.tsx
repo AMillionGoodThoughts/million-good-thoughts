@@ -31,7 +31,7 @@ const Chip = ({ children }: { children: React.ReactNode }) => (
 );
 
 // Seed quotes: verify rights before production
-const SEED_QUOTES = [
+const SEED_QUOTES = [{
   text: "Keep your face always toward the sunshine—and shadows will fall behind you.",
   author: "Walt Whitman",
   source: "Leaves of Grass",
@@ -319,7 +319,7 @@ const SEED_QUOTES = [
   moods: ["anxious","stressed"],
   publicDomainLikely: true,
   isAffirmation: true
-}
+},
 {
   text: "There is nothing either good or bad, but thinking makes it so.",
   author: "William Shakespeare",
@@ -677,9 +677,8 @@ const SEED_QUOTES = [
   source: "",
   moods: ["hopeless","grieving"],
   publicDomainLikely: true,
-  isAff
-
-
+   isAffirmation: true
+}
 ];
 
 const AFFIRMATIONS = [
@@ -743,9 +742,11 @@ export default function MillionGoodThoughts() {
     return [...mooded, ...aff];
   }, [mood, safeMode]);
 
-  function generate() {
-    const q = pickWeighted(pool);
-    setQuote(q);
+    function generate() {
+    setQuote((current: { text: string } | null) => {
+      const alternatives = pool.filter((thought) => thought.text !== current?.text);
+      return pickWeighted(alternatives.length > 0 ? alternatives : pool);
+    });
   }
 
   useEffect(() => {
@@ -900,4 +901,3 @@ export default function MillionGoodThoughts() {
     </div>
   );
 }
-Add 200 uplifing quotes

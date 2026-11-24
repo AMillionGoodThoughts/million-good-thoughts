@@ -22,4 +22,4 @@ module.exports = {
 
 
 
-Fix Next.js config
+// Fix Next.js config
