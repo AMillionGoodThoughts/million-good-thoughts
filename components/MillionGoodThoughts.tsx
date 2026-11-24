@@ -682,6 +682,14 @@ const SEED_QUOTES = [{
 ];
 
 const AFFIRMATIONS = [
+    { text: "A hard afternoon doesn’t get to tell the story of your whole life.", moods: ["sad"] },
+  { text: "On a low-energy day, doing one thing that makes tomorrow easier is enough.", moods: ["down"] },
+  { text: "You don’t have to picture a better future today. Give yourself room to get through this hour.", moods: ["hopeless"] },
+  { text: "When your mind is answering ten questions at once, write down the one that actually needs an answer today.", moods: ["anxious"] },
+  { text: "Pick one thing that can wait until tomorrow and give yourself permission to leave it there.", moods: ["stressed"] },
+  { text: "If you miss someone, a simple ‘I thought of you today’ is enough to start a conversation.", moods: ["lonely"] },
+  { text: "You can enjoy a good moment and still miss someone deeply. There’s room for both.", moods: ["grieving"] },
+  { text: "Make the first step small enough for the energy you have today.", moods: ["unmotivated"] },
   { text: "You have survived every hard day so far—today is no different.", moods: ["sad", "hopeless", "down"] },
   { text: "You don’t need to feel ready to take a tiny step. Take the step; readiness will follow.", moods: ["unmotivated", "anxious"] },
   { text: "Somewhere in your future, someone is grateful you didn’t give up today.", moods: ["hopeless", "grieving"] },
